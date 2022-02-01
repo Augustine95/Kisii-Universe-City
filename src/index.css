@@ -169,3 +169,17 @@ p {
 .gadget .media__content {
   font-size: 0.7rem;
 }
+
+/* Page Header */
+.page__header {
+  align-items: center;
+  background: #f8f1cc;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  padding: 0 0.3rem;
+}
+
+.page__title {
+  margin: 0;
+}

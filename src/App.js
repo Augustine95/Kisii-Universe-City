@@ -1,7 +1,12 @@
-import avatar from './images/augustine.png'
-
 function App() {
-  return <div style={{ padding: '2rem' }}></div>
+  return (
+    <div>
+      <header className="page__header">
+        <h1 className="page__title">Home</h1>
+        <p>icon</p>
+      </header>
+    </div>
+  )
 }
 
 export default App
