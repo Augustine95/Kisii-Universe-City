@@ -137,6 +137,7 @@ p {
 
   .media__title {
     font-size: 1rem;
+    white-space: nowrap;
   }
 
   .media__content {
@@ -154,4 +155,17 @@ p {
 
 .gadget__heading {
   margin: 0 0 0.3rem 0;
+}
+
+.gadget .media__image {
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.gadget .media__title {
+  font-size: 0.8rem;
+}
+
+.gadget .media__content {
+  font-size: 0.7rem;
 }
