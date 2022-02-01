@@ -1,18 +1,53 @@
 @import './css/normalize.css';
 
+/* Color Palette */
 :root {
   --color-primary: #f0a04b;
+  --color-primary-lighter: #f6c453;
   --color-secondary: #183a1d;
   --color-secondary-lighter: #e1eedd;
+  --color-background: #fefbe9;
 }
 
+/* Typography */
 body {
-  background: #fefbe9;
+  background: var(--color-background);
   color: var(--color-secondary);
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
 }
 
 h1,
-h2,
-h3 {
-  color: #f6c453;
+h2 {
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+h1 {
+  font-size: 1.802rem;
+}
+
+h2 {
+  font-size: 1.602rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 1.702rem;
+  }
+
+  h2 {
+    font-size: 1.502rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
 }
