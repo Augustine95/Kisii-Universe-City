@@ -178,12 +178,30 @@ p {
   background: #f8f1cc;
   display: flex;
   justify-content: space-between;
+  left: calc(var(--left-padding) + 1.3rem);
   margin-bottom: 0.3rem;
   padding: 0 0.3rem;
+  position: fixed;
+  right: 0;
+  z-index: 1;
 }
 
 .page__title {
   margin: 0;
+}
+
+.page__icon {
+  color: var(--color-primary);
+}
+
+/* Routing */
+.main {
+  display: flex;
+  --left-padding: 8rem;
+}
+
+.routes {
+  padding-left: var(--left-padding);
 }
 
 /* Side Navigation */
@@ -194,7 +212,7 @@ p {
   font-weight: 600;
   justify-content: space-between;
   min-height: 100vh;
-  min-width: 8rem;
+  min-width: var(--left-padding);
   padding: 0 0.5rem 0.5rem;
   position: fixed;
   top: 0;
@@ -205,7 +223,6 @@ p {
   margin: 0.3rem 0;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .nav__link:hover {
@@ -215,4 +232,13 @@ p {
 
 .nav__item {
   margin: 0 0.1rem;
+}
+
+.logo {
+  padding: 0.1rem;
+  font-size: 1rem;
+}
+
+.sidebar-nav h2 {
+  color: #218230;
 }
