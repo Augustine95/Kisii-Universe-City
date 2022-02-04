@@ -13,7 +13,7 @@ a {
 /* Color Palette */
 :root {
   --color-primary: #f0a04b;
-  --color-primary-lighter: #f6c453;
+  --color-primary-lighter: #f8f1cc;
   --color-secondary: #183a1d;
   --color-secondary-lighter: #e1eedd;
   --color-background: #fefbe9;
@@ -26,6 +26,7 @@ body {
   font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
+  margin-top: 3.2rem;
 }
 
 h1,
@@ -147,6 +148,22 @@ p {
   }
 }
 
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  gap: 0 0.7rem;
+}
+
+.grid--1x2 {
+  grid-template-columns: 70% 1fr;
+}
+
 /* Gadgets */
 .gadget {
   background: var(--color-secondary-lighter);
@@ -178,11 +195,9 @@ p {
   background: #f8f1cc;
   display: flex;
   justify-content: space-between;
-  left: calc(var(--left-padding) + 1.3rem);
   margin-bottom: 0.3rem;
   padding: 0 0.3rem;
   position: fixed;
-  right: 0;
   z-index: 1;
 }
 
@@ -194,51 +209,112 @@ p {
   color: var(--color-primary);
 }
 
-/* Routing */
-.main {
-  display: flex;
-  --left-padding: 8rem;
+/* Lists */
+.list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
-.routes {
-  padding-left: var(--left-padding);
+/* Collapsibles */
+.collapsible__content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
 }
 
-/* Side Navigation */
-.sidebar-nav {
-  background: var(--color-secondary-lighter);
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* Navigation */
+.nav {
+  background: var(--color-primary-lighter);
   display: flex;
-  flex-direction: column;
-  font-weight: 600;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  font-size: 1rem;
   justify-content: space-between;
-  min-height: 100vh;
-  min-width: var(--left-padding);
-  padding: 0 0.5rem 0.5rem;
+  left: 0;
+  padding: 0.2rem 0.1rem;
   position: fixed;
+  right: 0;
   top: 0;
+  z-index: 1;
+}
+
+.nav__menu {
+  cursor: pointer;
+}
+
+.nav__links {
+  width: 100%;
 }
 
 .nav__link {
-  font-size: 1.3rem;
-  margin: 0.3rem 0;
-  display: flex;
   align-items: center;
+  border-bottom: 1px solid #e9be90; /* TODO: Consider refactoring this solor */
+  display: flex;
+  width: 100%;
 }
 
 .nav__link:hover {
-  background: #afcda6;
-  border-radius: 30px;
+  background: #e9be90;
 }
 
-.nav__item {
-  margin: 0 0.1rem;
+.nav__link.active {
+  font-weight: 900;
 }
 
-.logo {
-  padding: 0.1rem;
-  font-size: 1rem;
+.nav__link.active .nav__icon {
+  opacity: 1;
 }
 
-.sidebar-nav h2 {
-  color: #218230;
+.nav__icon {
+  opacity: 0.8;
+  margin-right: 0.2rem;
+  align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    align-items: center;
+    padding: 0.5rem 0.1rem;
+  }
+
+  .nav__menu {
+    display: none;
+  }
+
+  .nav__link {
+    margin: 0.5rem;
+    border: 0;
+  }
+
+  .nav__links {
+    width: auto;
+    display: flex;
+  }
+
+  .nav__icon {
+    display: none;
+  }
+
+  .nav__links.collapsible__content {
+    max-height: 100vh;
+    opacity: 1;
+  }
+
+  .nav__link {
+    margin-bottom: 0;
+    margin-top: 0;
+    transition: all 0.3s;
+  }
+
+  .nav__link:hover {
+    text-decoration: underline;
+    background: none;
+  }
 }
