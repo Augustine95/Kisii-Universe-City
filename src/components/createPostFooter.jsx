@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { EmojiEmotionsOutlined, Photo } from '@mui/icons-material'
 
-export default function PostCardFooter({
+export default function CreatePostFooter({
   onAddPostPhoto,
   onPostUpload,
   onPostEmojiActive,
@@ -20,7 +20,9 @@ export default function PostCardFooter({
           hidden
           onChange={onAddPostPhoto}
           ref={imagePicker}
+          multiple
           type="file"
+          maxLength={4}
         />
         <span className="icon post-card__footer__emoji-icon">
           <EmojiEmotionsOutlined onClick={onPostEmojiActive} />

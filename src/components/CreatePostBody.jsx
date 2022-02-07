@@ -1,7 +1,7 @@
 import React from 'react'
 import { CancelRounded } from '@mui/icons-material'
 
-export default function PostCardBody({
+export default function CreatePostBody({
   onAddPostMessage,
   onRemovePostPhoto,
   postPhoto,

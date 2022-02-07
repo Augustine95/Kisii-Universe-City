@@ -1,4 +1,4 @@
-@import './css/normalize.css';
+@import "./css/normalize.css";
 
 *,
 *::after,
@@ -21,12 +21,13 @@ a {
 
 /* Typography */
 body {
+  --margin-top: 3.2rem;
   background: var(--color-background);
   color: var(--color-secondary);
-  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat Alternates", Helvetica, sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
-  margin-top: 3rem;
+  margin-top: var(--margin-top);
   padding: 0 0.3rem;
 }
 
@@ -252,6 +253,7 @@ p {
 /* Navigation */
 .nav {
   background: var(--color-primary-lighter);
+  box-shadow: 0 0 3px 2px #ccc;
   display: flex;
   flex-wrap: wrap;
   font-size: 0.7rem;
@@ -339,7 +341,7 @@ p {
   }
 }
 
-/* Posts */
+/* Post Creator */
 .post-creator {
   border-bottom: 3px solid var(--color-primary);
   margin-bottom: 0.5rem;
@@ -369,6 +371,11 @@ p {
   border-radius: 100%;
 }
 
+.avatar--medium {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 .avatar--small {
   height: 2rem;
   width: 2rem;
@@ -378,8 +385,9 @@ p {
 .post-card {
   border: 1px solid var(--color-secondary);
   border-radius: 20px;
-  padding: 0.5rem 0.2rem;
   flex-grow: 1;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.2rem;
 }
 
 .post-card__textarea {
@@ -447,5 +455,62 @@ p {
 @media screen and (min-width: 430px) {
   .post-card__footer__emoji-icon {
     display: inline-block;
+  }
+}
+
+/* Post */
+.post {
+  border-top: 1px solid var(--color-secondary);
+  font-size: 1rem;
+  padding: 0.4rem 0;
+  width: 100%;
+}
+
+.post__author-name-container {
+  align-items: center;
+  display: flex;
+}
+
+.post__authour-name {
+  font-weight: 700;
+  word-spacing: 3px;
+}
+
+.post__authour-username-container {
+  display: flex;
+}
+
+.post__authour-username {
+  color: var(--color-primary);
+  display: block;
+  opacity: 0.7;
+  margin-right: 0.5rem;
+}
+
+.post__message {
+  display: block;
+  font-weight: 300;
+}
+
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .post {
+    font-size: 0.9rem;
+  }
+
+  .post__header {
+    display: flex;
+  }
+
+  .post__authour-username {
+    margin: 0 0.4rem;
+  }
+
+  .post__authour-username {
+    display: inline;
   }
 }

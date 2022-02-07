@@ -1,11 +1,11 @@
 import React from 'react'
 import { Picker } from 'emoji-mart'
 import Avatar from './avatar'
-import PostCardFooter from './postCardFooter'
-import PostCardBody from './postCardBody'
+import CreatePostFooter from './createPostFooter'
+import CreatePostBody from './CreatePostBody'
 import avatar from '../images/augustine.png'
 
-export default function PostCard({
+export default function CreatePostCard({
   isPostEmojiActive,
   onAddPostEmoji,
   onAddPostMessage,
@@ -21,12 +21,12 @@ export default function PostCard({
       <section className="media">
         <Avatar src={avatar} />
         <article className="post-card">
-          <PostCardBody
+          <CreatePostBody
             onAddPostMessage={onAddPostMessage}
             onRemovePostPhoto={onRemovePostPhoto}
             postPhoto={postPhoto}
           />
-          <PostCardFooter
+          <CreatePostFooter
             onAddPostPhoto={onAddPostPhoto}
             onPostEmojiActive={onPostEmojiActive}
             onPostUpload={onPostUpload}
