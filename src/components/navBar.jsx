@@ -46,7 +46,13 @@ export default function Bar() {
       </article>
       <ul className="list nav__links collapsible__content">
         {links.map(({ icon, label, to }) => (
-          <NavigationLink key={label} icon={icon} label={label} to={to && to} />
+          <NavigationLink
+            key={label}
+            icon={icon}
+            label={label}
+            to={to && to}
+            onClick={toggleCollapsibleExpansion}
+          />
         ))}
       </ul>
     </nav>

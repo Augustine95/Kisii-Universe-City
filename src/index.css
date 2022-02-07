@@ -109,16 +109,18 @@ p {
   padding-right: 3.5rem;
 }
 
+.disabled {
+  opacity: 0.7;
+}
+
 /* Media */
 .media {
   display: flex;
 }
 
 .media__image {
-  border-radius: 100%;
-  height: 4rem;
   margin-right: 0.5rem;
-  width: 4rem;
+  margin-left: 0.1rem;
 }
 
 .media__title {
@@ -154,14 +156,23 @@ p {
 }
 
 /* Grids */
+/* .grid {
+  display: grid;
+  gap: 0 0.7rem;
+}
+
+.grid--1x2 {
+  grid-template-columns: repeat(2, 1fr);
+} */
+
 @media screen and (min-width: 768px) {
   .grid {
     display: grid;
-    gap: 0 0.7rem;
   }
 
-  .grid--1x2 {
+  .container.grid--1x2 {
     grid-template-columns: 70% 1fr;
+    gap: 0 1.5rem;
   }
 }
 
@@ -331,20 +342,12 @@ p {
 /* Posts */
 .post-creator {
   border-bottom: 3px solid var(--color-primary);
-  display: flex;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-.post-creator__avatar {
-  border-radius: 100%;
-  height: 2rem;
-  margin: 0 0.5rem;
-  width: 2rem;
-}
-
 .post-creator__badge {
-  background: #ccc;
+  background: var(--color-secondary-lighter);
   border-radius: 30px;
   cursor: pointer;
   flex-grow: 1;
@@ -352,4 +355,97 @@ p {
   font-weight: 600;
   letter-spacing: 1px;
   padding: 0.5rem;
+}
+
+/* Icons */
+.icon {
+  cursor: pointer;
+}
+
+/* Avatar */
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+
+.avatar--small {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* Post Card */
+.post-card {
+  border: 1px solid var(--color-secondary);
+  border-radius: 20px;
+  padding: 0.5rem 0.2rem;
+  flex-grow: 1;
+}
+
+.post-card__textarea {
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  height: 5rem;
+  min-height: 2rem;
+  min-width: 100%;
+  outline: none;
+  resize: none;
+}
+
+.post-card__image-input {
+  position: relative;
+}
+
+.post-card__image-cancel-icon {
+  position: absolute;
+  margin-top: 0.8rem;
+  margin-left: 0.8rem;
+}
+
+.post-card__image-input > img {
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 0 auto;
+  object-fit: cover;
+  width: 100%;
+  z-index: -1;
+}
+
+.post-card__footer {
+  border-top: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.4rem;
+}
+
+.post-card__footer .icon {
+  margin: 0 0.4rem;
+}
+
+.post-card__footer__emoji-icon {
+  display: none;
+}
+
+.emoji-mart {
+  border-radius: 5px;
+  font-family: inherit;
+  margin-left: 4.7rem;
+  margin-top: 0.1rem;
+  width: 100%;
+}
+
+.emoji-mart-bar {
+  display: none;
+}
+
+::placeholder {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 430px) {
+  .post-card__footer__emoji-icon {
+    display: inline-block;
+  }
 }

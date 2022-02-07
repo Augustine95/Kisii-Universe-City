@@ -1,16 +1,10 @@
-import React, { useState } from 'react'
-import avatar from '../images/augustine.png'
-import PostCreator from './postCreator'
+import React from 'react'
+import Post from './post'
 
 const Home = () => {
-  const [isPostActive, setPostActive] = useState(false)
-
-  const handlePostActive = () => setPostActive(!isPostActive)
-
   return (
     <section>
-      <PostCreator avatar={avatar} onClick={handlePostActive} />
-      <article></article>
+      <Post />
     </section>
   )
 }
