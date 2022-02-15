@@ -30,8 +30,8 @@ const Post = ({
             <span className="post__author-username" onClick={onPost}>
               {username}
             </span>
+            <span>{timestamp}</span>
           </div>
-          <span>{timestamp}</span>
         </header>
         <span className="post__message">{postContent}</span>
         <PostFooter liked={liked} onLike={onLike} likesCount={likesCount} />
