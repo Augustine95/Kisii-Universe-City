@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+
 import PostCreator from "./postCreator";
 import CreatePostCard from "./createPostCard";
 import avatar from "../images/augustine.png";
-import NewPostCard from "./newPostCard";
 
 export default function CreatePost() {
   const [isPostActive, setIsPostActive] = useState(false);
@@ -44,7 +44,6 @@ export default function CreatePost() {
         onClick={() => setIsPostActive(!isPostActive)}
       />
       {isPostActive && (
-        // <NewPostCard />
         <CreatePostCard
           postPhoto={postPhoto}
           postMessage={postMessage}
