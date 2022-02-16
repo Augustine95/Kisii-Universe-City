@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ArrowBack } from "@mui/icons-material";
+
 import PostFooter from "./postFooter";
 import ListGroup from "./listGroup";
 import Media from "./media";
 
-export default function PostStatus(props) {
-  const [post, setPost] = useState({});
-
-  useEffect(() => {
-    setPost(props.post);
-  }, []);
-
-  const { author, time, postMessage, comments } = props.post;
+export default function PostStatus({ author, time, postMessage, comments }) {
+  console.log(author);
 
   return (
     <section className="post-status">

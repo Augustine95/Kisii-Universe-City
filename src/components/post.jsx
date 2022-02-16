@@ -1,9 +1,10 @@
 import React from "react";
-import { Verified } from "@mui/icons-material";
 
 import Avatar from "./avatar";
 import pic from "../images/augustine.png";
 import PostFooter from "./postFooter";
+import ListGroup from "./listGroup";
+import PostHeader from "./PostHeader";
 
 const Post = ({
   avatar = pic,
@@ -16,25 +17,42 @@ const Post = ({
   isAdmin,
   liked,
   likesCount,
+  onReply,
+  replyMessage,
+  onReplyChange,
+  onCommentActiveSwitch,
+  isCommentActive,
 }) => {
   return (
     <section className="media">
       <Avatar src={avatar} className="avatar--medium" />
       <section className="post">
-        <header className="post__header">
-          <div className="post__author-name-container">
-            <span className="post__author-name">{name}</span>
-            {isAdmin && <Verified fontSize="small" />}
-          </div>
-          <div className="post__author-username-container">
-            <span className="post__author-username" onClick={onPost}>
-              {username}
-            </span>
-            <span>{timestamp}</span>
-          </div>
-        </header>
+        <PostHeader
+          isAdmin={isAdmin}
+          name={name}
+          onPost={onPost}
+          timestamp={timestamp}
+          username={username}
+        />
         <span className="post__message">{postContent}</span>
-        <PostFooter liked={liked} onLike={onLike} likesCount={likesCount} />
+        <PostFooter
+          liked={liked}
+          likesCount={likesCount}
+          onComment={onCommentActiveSwitch}
+          onLike={onLike}
+        />
+        {isCommentActive && (
+          <ListGroup
+            avatar={avatar}
+            btnLabel="Reply"
+            className="post"
+            btnClassName="btn--small"
+            onClick={onReply}
+            value={replyMessage}
+            onChange={onReplyChange}
+            placeholder="Post your reply..."
+          />
+        )}
       </section>
     </section>
   );
