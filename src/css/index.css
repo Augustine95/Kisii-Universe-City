@@ -615,7 +615,7 @@ p {
 .input-label {
   text-align: "left";
   font-size: 1rem;
-  margin-top: 1rem;
+  margin-top: 0.9rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -655,6 +655,7 @@ p {
 .input__error-message {
   color: #e43030;
   letter-spacing: 1px;
+  margin-left: 0.5rem;
 }
 
 /* Form */
@@ -664,7 +665,7 @@ p {
   box-shadow: 0 0 10px 1px #ccc;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0.7rem auto;
   max-width: 30rem;
   padding: 2rem 1rem 2.5rem;
 }
@@ -676,7 +677,7 @@ p {
 }
 
 .form .btn {
-  margin-top: 1rem;
+  margin-top: 2rem;
   color: var(--color-primary);
 }
 

@@ -1,13 +1,12 @@
 import React from "react";
+import { useFormikContext } from "formik";
 
 import Input from "../input";
+import ErrorMessage from "./ErrorMessage";
 
-export default function FormField({
-  error,
-  label,
-  type = "text",
-  ...otherProps
-}) {
+export default function FormField({ label, type = "text", ...otherProps }) {
+  const { handleChange, setFieldTouched, touched, errors } = useFormikContext();
+
   const name = label.toLowerCase();
 
   return (
@@ -15,8 +14,15 @@ export default function FormField({
       <label className="input-label" htmlFor={name}>
         {label}
       </label>
-      <Input placeholder={label} id={name} type={type} {...otherProps} />
-      <span className="input__error-message">{error}</span>
+      <Input
+        id={name}
+        onBlur={() => setFieldTouched(name)}
+        onChange={handleChange(name)}
+        placeholder={label}
+        type={type}
+        {...otherProps}
+      />
+      <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
   );
 }

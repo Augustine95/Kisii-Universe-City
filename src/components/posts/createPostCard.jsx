@@ -1,9 +1,9 @@
 import React from 'react'
 import { Picker } from 'emoji-mart'
-import Avatar from './avatar'
+import Avatar from '../avatar'
 import CreatePostFooter from './createPostFooter'
 import CreatePostBody from './CreatePostBody'
-import avatar from '../images/augustine.png'
+import avatar from '../../images/augustine.png'
 
 export default function CreatePostCard({
   isPostEmojiActive,

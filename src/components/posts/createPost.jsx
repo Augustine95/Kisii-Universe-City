@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import PostCreator from "./postCreator";
 import CreatePostCard from "./createPostCard";
-import avatar from "../images/augustine.png";
+import avatar from "../../images/augustine.png";
 
 export default function CreatePost() {
   const [isPostActive, setIsPostActive] = useState(false);

@@ -7,8 +7,8 @@ import {
   Verified,
 } from "@mui/icons-material";
 import React from "react";
-import avatar from "../images/augustine.png";
-import Avatar from "./avatar";
+import avatar from "../../images/augustine.png";
+import Avatar from "../avatar";
 
 export default function Profile() {
   const posts = [

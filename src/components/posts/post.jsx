@@ -1,9 +1,9 @@
 import React from "react";
 
-import Avatar from "./avatar";
-import pic from "../images/augustine.png";
+import Avatar from "../avatar";
+import pic from "../../images/augustine.png";
 import PostFooter from "./postFooter";
-import ListGroup from "./listGroup";
+import ListGroup from "../listGroup";
 import PostHeader from "./PostHeader";
 
 const Post = ({

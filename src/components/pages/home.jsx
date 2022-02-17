@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import avatar from "../images/augustine.png";
-import CreatePost from "./createPost";
-import Post from "./post";
+import avatar from "../../images/augustine.png";
+import CreatePost from "../posts/createPost";
+import Post from "../posts/post";
 
 const initialPosts = [
   {
