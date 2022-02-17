@@ -5,7 +5,7 @@ import Business from "./components/business";
 import Gadget from "./components/gadget";
 import Groups from "./components/groups";
 import Home from "./components/home";
-import Login from "./components/login";
+import Login from "./components/forms/login";
 import Logout from "./components/logout";
 import Members from "./components/members";
 import Memes from "./components/memes";

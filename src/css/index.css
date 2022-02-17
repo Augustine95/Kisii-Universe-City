@@ -39,7 +39,7 @@ h2 {
 }
 
 h1 {
-  font-size: 1.602rem;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -593,19 +593,29 @@ p {
 .input {
   background: inherit;
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-secondary-lighter);
+  border: 1px solid #e2c8ac;
   color: inherit;
-  flex-grow: 1;
+  display: block;
   font-size: 1rem;
-  margin: 0.3rem 0;
   outline: 0;
   padding: 0.6rem;
   transition: all 0.3s ease-out;
-  width: 0;
+  /* margin: 0.3rem 0 1.2rem; */
+  width: "100%";
+}
+
+.form__input {
+  margin: 0.3rem 0 1.2rem;
 }
 
 .input:focus {
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-primary);
+}
+
+.input-label {
+  text-align: "left";
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -635,55 +645,42 @@ p {
 .input-group .input,
 .input-group .avatar {
   margin: 0rem;
+  width: 0;
 }
 
 .input-group .input {
   border: 0;
 }
 
-/* Form */
-.form__input {
-  background: inherit;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--color-primary-lighter);
-  color: inherit;
-  display: block;
-  flex-grow: 1;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0.5rem 0;
-  outline: 0;
-  padding: 0.6rem;
-  transition: all 0.3s ease-in;
-}
-
-.form__input:focus {
-  border: 1px solid var(--color-primary);
+.input__error-message {
+  color: #e43030;
+  letter-spacing: 1px;
 }
 
 /* Form */
 .form {
+  border-radius: 7px;
+  border: 1px solid var(--color-secondary-lighter);
+  box-shadow: 0 0 10px 1px #ccc;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-/* Login Form */
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius);
-  max-width: 30rem;
   margin: 0 auto;
-  align-content: center;
-  border: 1px solid var(--color-primary);
-  padding: 1rem;
+  max-width: 30rem;
+  padding: 2rem 1rem 2.5rem;
 }
 
-.heading {
-  font-size: 1.5rem;
+.form__heading {
+  text-align: center;
   text-transform: uppercase;
-  margin: 0.7rem 0 1.5rem;
+  margin-bottom: 0;
+}
+
+.form .btn {
+  margin-top: 1rem;
+  color: var(--color-primary);
+}
+
+.form .btn:hover {
+  color: #fff;
+  font-weight: 700;
 }

@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import avatar from "../images/augustine.png";
 import CreatePost from "./createPost";
-import ListGroup from "./listGroup";
 import Post from "./post";
-import PostStatus from "./postStatus";
 
 const initialPosts = [
   {
@@ -96,28 +94,25 @@ const Home = () => {
     <section>
       <CreatePost />
       {posts.map((post) => (
-        <>
-          <Post
-            isAdmin={post.isAdmin}
-            key={post.id}
-            liked={post.liked}
-            likesCount={post.likes.length}
-            name={post.author.name}
-            onLike={() => handleLike(post)}
-            onPost={() => console.log(post)}
-            postContent={post.postMessage}
-            timestamp={post.time}
-            username={post.author.username}
-            onReply={() => handleReplyPost(post)}
-            onReplyChange={handleReplyChange}
-            replyMessage={replyMessage}
-            avatar={post.avatar}
-            isCommentActive={post.isCommentActive}
-            onCommentActiveSwitch={() => switchCommentActive(post)}
-          />
-        </>
+        <Post
+          isAdmin={post.isAdmin}
+          key={post.id}
+          liked={post.liked}
+          likesCount={post.likes.length}
+          name={post.author.name}
+          onLike={() => handleLike(post)}
+          onPost={() => console.log(post)}
+          postContent={post.postMessage}
+          timestamp={post.time}
+          username={post.author.username}
+          onReply={() => handleReplyPost(post)}
+          onReplyChange={handleReplyChange}
+          replyMessage={replyMessage}
+          avatar={post.avatar}
+          isCommentActive={post.isCommentActive}
+          onCommentActiveSwitch={() => switchCommentActive(post)}
+        />
       ))}
-      {/* <PostStatus post={posts[0]} /> */}
     </section>
   );
 };

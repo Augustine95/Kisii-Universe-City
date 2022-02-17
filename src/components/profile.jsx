@@ -1,8 +1,5 @@
 import {
-  Comment,
-  CommentBankOutlined,
   CommentOutlined,
-  HeartBrokenOutlined,
   HeartBrokenRounded,
   MoreHorizOutlined,
   MoreOutlined,
