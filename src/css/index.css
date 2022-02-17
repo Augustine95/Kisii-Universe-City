@@ -595,12 +595,12 @@ p {
   border-radius: var(--border-radius);
   border: 1px solid #e2c8ac;
   color: inherit;
-  display: block;
+  display: flex;
+  flex: 1;
   font-size: 1rem;
   outline: 0;
   padding: 0.6rem;
   transition: all 0.3s ease-out;
-  /* margin: 0.3rem 0 1.2rem; */
   width: "100%";
 }
 

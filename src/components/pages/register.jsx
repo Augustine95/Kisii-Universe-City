@@ -7,7 +7,7 @@ export default function Register() {
   const validationSchema = Yup.object().shape({
     name: Yup.string().required().label("Name"),
     username: Yup.string().required().label("Username"),
-    password: Yup.string().required().min(4).label("Password"),
+    password: Yup.string().required().min(4).max(255).label("Password"),
   });
 
   return (
