@@ -86,7 +86,7 @@ p {
 .btn--outline {
   font-weight: 700;
   border: 1px solid var(--color-secondary);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .btn--outline:hover {
@@ -115,6 +115,10 @@ p {
 .btn--stretched {
   padding-left: 3.5rem;
   padding-right: 3.5rem;
+}
+
+.btn--long {
+  width: 100%;
 }
 
 .disabled {
@@ -388,54 +392,80 @@ p {
   margin-top: 0.1rem;
 }
 
-/* Post Card */
-.post-card {
-  border: 1px solid var(--color-secondary);
-  border-radius: 20px;
-  flex-grow: 1;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 0.2rem;
+/* Card */
+.card {
+  border-radius: 5px;
+  padding: 1rem;
 }
 
-.post-card__textarea {
+.card__header {
+  border-bottom: 1px solid var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Plan */
+.plan__heading {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.plan__media {
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.plan__author {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.plan__footer {
+  align-items: center;
+  border-radius: 7px;
+  border: 1px solid var(--color-primary-lighter);
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0 0.7rem;
+  padding: 0.5rem;
+}
+
+.plan__footer__heading {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  word-spacing: 0.09rem;
+}
+
+.plan__footer__icons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 5rem;
+}
+
+/* Select */
+.select {
+  border-radius: 10px;
+  border: 1px solid var(--color-primary);
+  font-family: inherit;
+  font-size: 0.7rem;
+  outline: 0;
+  padding: 0.2rem;
+}
+
+/* TextArea */
+.textarea {
   background: transparent;
   border: 0;
   font-size: 1rem;
-  height: 5rem;
-  min-height: 2rem;
+  min-height: 7rem;
   min-width: 100%;
-  outline: none;
-  resize: none;
+  outline: 0;
 }
 
-.post-card__image-input {
-  position: relative;
-}
-
-.post-card__image-cancel-icon {
-  position: absolute;
-  margin-top: 0.8rem;
-  margin-left: 0.8rem;
-}
-
-.post-card__image-input > img {
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  margin: 0 auto;
-  object-fit: cover;
-  width: 100%;
-  z-index: -1;
-}
-
-.post-card__footer {
-  border-top: 1px solid #000;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 0.4rem;
-}
-
-.post-card__footer .icon {
-  margin: 0 0.4rem;
+/* Post Form */
+.post-form {
+  /* background: var(--color-secondary-lighter); */
+  background: #e7e0e0;
 }
 
 .post-card__footer__emoji-icon {
