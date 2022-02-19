@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import PostCreator from "./postCreator";
-import CreatePostCard from "./createPostCard";
 import avatar from "../../images/augustine.png";
+import CreatePostCard from "./createPostCard";
+import PostCreator from "./postCreator";
 
 export default function CreatePost() {
-  const [isPostActive, setIsPostActive] = useState(false);
   const [isPostEmojiActive, setIsPostEmojiActive] = useState(false);
+  const [postFormOpen, setPostFormOpen] = useState(false);
   const [postMessage, setPostMessage] = useState("");
   const [postPhoto, setPostPhoto] = useState("");
 
@@ -32,30 +32,28 @@ export default function CreatePost() {
 
   const handlePostUpload = () => {
     setIsPostEmojiActive(false);
-    setIsPostActive(false);
     setPostPhoto("");
     setPostMessage("");
   };
 
+  const handlePostFormOpen = () => setPostFormOpen(!postFormOpen);
+
   return (
     <section>
-      <PostCreator
-        avatar={avatar}
-        onClick={() => setIsPostActive(!isPostActive)}
+      <PostCreator avatar={avatar} onClick={handlePostFormOpen} />
+      <CreatePostCard
+        postPhoto={postPhoto}
+        postMessage={postMessage}
+        isPostEmojiActive={isPostEmojiActive}
+        onAddPostEmoji={handleAddPostEmoji}
+        onAddPostMessage={handleAddPostMessage}
+        onAddPostPhoto={handleAddPostPhoto}
+        onRemovePostPhoto={handleRemovePostPhoto}
+        onPostEmojiActive={handlePostEmojiActive}
+        onPostUpload={handlePostUpload}
+        postFormOpen={postFormOpen}
+        onPostFormClose={handlePostFormOpen}
       />
-      {isPostActive && (
-        <CreatePostCard
-          postPhoto={postPhoto}
-          postMessage={postMessage}
-          isPostEmojiActive={isPostEmojiActive}
-          onAddPostEmoji={handleAddPostEmoji}
-          onAddPostMessage={handleAddPostMessage}
-          onAddPostPhoto={handleAddPostPhoto}
-          onRemovePostPhoto={handleRemovePostPhoto}
-          onPostEmojiActive={handlePostEmojiActive}
-          onPostUpload={handlePostUpload}
-        />
-      )}
     </section>
   );
 }

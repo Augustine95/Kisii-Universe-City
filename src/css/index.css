@@ -450,6 +450,7 @@ p {
   font-size: 0.7rem;
   outline: 0;
   padding: 0.2rem;
+  letter-spacing: 1px;
 }
 
 /* TextArea */
@@ -464,8 +465,15 @@ p {
 
 /* Post Form */
 .post-form {
-  /* background: var(--color-secondary-lighter); */
   background: #e7e0e0;
+}
+
+.post-form__btn-container {
+  display: flex;
+}
+
+.post-form__btn-container .btn {
+  margin: 0 0.5rem;
 }
 
 .post-card__footer__emoji-icon {

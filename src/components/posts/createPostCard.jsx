@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Picker } from "emoji-mart";
-import Avatar from "../avatar";
-import CreatePostFooter from "./createPostFooter";
-import CreatePostBody from "./CreatePostBody";
+
 import avatar from "../../images/augustine.png";
-import PostBadge from "./PostBadge";
+import PostForm from "./PostForm";
 
 export default function CreatePostCard({
   isPostEmojiActive,
@@ -16,15 +14,23 @@ export default function CreatePostCard({
   onRemovePostPhoto,
   postMessage,
   postPhoto,
+  onPostFormClose,
+  postFormOpen,
 }) {
   const currentUser = { name: "Augustine Awuori II", avatar };
 
   return (
     <section>
-      {/* <section className="media"> */}
-      {/* <Avatar src={avatar} /> */}
-      <PostBadge currentUser={currentUser} />
-      {/* </section> */}
+      <PostForm
+        currentUser={currentUser}
+        onEmojiIconClick={onPostEmojiActive}
+        onPhotoIconClick={onAddPostPhoto}
+        onPost={onPostUpload}
+        onPostCancel
+        postPhoto={postPhoto}
+        onPostFormClose={onPostFormClose}
+        postFormOpen={postFormOpen}
+      />
       {isPostEmojiActive && (
         <Picker
           autoFocus
@@ -35,18 +41,4 @@ export default function CreatePostCard({
       )}
     </section>
   );
-}
-{
-  /* <CreatePostBody
-            onAddPostMessage={onAddPostMessage}
-            onRemovePostPhoto={onRemovePostPhoto}
-            postPhoto={postPhoto}
-          />
-          <CreatePostFooter
-            onAddPostPhoto={onAddPostPhoto}
-            onPostEmojiActive={onPostEmojiActive}
-            onPostUpload={onPostUpload}
-            postPhoto={postPhoto}
-            postMessage={postMessage}
-          /> */
 }
