@@ -10,12 +10,24 @@ const style = {
   boxShadow: 24,
   left: "50%",
   position: "absolute",
-  top: "50%",
+  top: "45%",
   transform: "translate(-50%, -50%)",
   width: "40rem",
 };
 
-export default function AppModal({ children, open, onClose, timeout = 4000 }) {
+export default function AppModal({
+  children,
+  ChildModal,
+  onClose,
+  open,
+  styles,
+  timeout = 4000,
+}) {
+  const getStyle = () => {
+    if (styles) return { ...style, ...styles };
+    return style;
+  };
+
   return (
     <Modal
       aria-describedby="transition-modal-description"
@@ -27,7 +39,10 @@ export default function AppModal({ children, open, onClose, timeout = 4000 }) {
       open={open}
     >
       <Fade in={open}>
-        <Box sx={style}>{children}</Box>
+        <Box sx={getStyle()}>
+          {children}
+          {ChildModal && ChildModal}
+        </Box>
       </Fade>
     </Modal>
   );

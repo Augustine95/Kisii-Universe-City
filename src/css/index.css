@@ -646,6 +646,7 @@ p {
   margin: 0.3rem 0 1.2rem;
 }
 
+#emoji-mart-search-4:focus,
 .input:focus {
   border: 1px solid var(--color-primary);
 }

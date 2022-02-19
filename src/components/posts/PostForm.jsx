@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { EmojiEmotions, Photo } from "@mui/icons-material";
 
 import AppButton from "../common/AppButton";
@@ -14,6 +14,7 @@ const targetGroup = [
 ];
 
 export default function PostForm({
+  ChildModal,
   currentUser,
   onEmojiIconClick,
   onPhotoIconClick,
@@ -22,10 +23,19 @@ export default function PostForm({
   onPostFormClose,
   postFormOpen,
 }) {
+  const [postMessage, setPostMessage] = useState("");
+
   const selectedFileRef = useRef();
 
+  const handlePostMessageChange = ({ currentTarget: input }) =>
+    setPostMessage(input.value);
+
   return (
-    <AppModal open={postFormOpen} onClose={onPostFormClose}>
+    <AppModal
+      ChildModal={ChildModal}
+      open={postFormOpen}
+      onClose={onPostFormClose}
+    >
       <article className="card post-form">
         <header className="card__header">
           <h1 className="plan__heading">create post</h1>
@@ -38,7 +48,12 @@ export default function PostForm({
               <DropDownList data={targetGroup} />
             </div>
           </article>
-          <TextArea placeholder="Tell us what's going on?" autoFocus />
+          <TextArea
+            placeholder="Tell us what's going on?"
+            value={postMessage}
+            onChange={handlePostMessageChange}
+            autoFocus
+          />
           {postPhoto && <img src={postPhoto} alt="post" />}
         </section>
         <footer className="plan__footer">
