@@ -458,9 +458,12 @@ p {
   background: transparent;
   border: 0;
   font-size: 1rem;
-  min-height: 7rem;
-  min-width: 100%;
+  max-height: 12rem;
+  min-height: 1.7rem;
   outline: 0;
+  padding: 0 0.1rem;
+  resize: none;
+  width: 100%;
 }
 
 /* Post Form */
