@@ -12,10 +12,11 @@ const style = {
   position: "absolute",
   top: "45%",
   transform: "translate(-50%, -50%)",
-  width: "40rem",
+  // width: "40rem",
 };
 
 export default function AppModal({
+  className = "",
   children,
   ChildModal,
   onClose,
@@ -34,6 +35,7 @@ export default function AppModal({
       aria-labelledby="transition-modal-title"
       BackdropComponent={Backdrop}
       BackdropProps={{ timeout }}
+      className={className}
       closeAfterTransition
       onClose={onClose}
       open={open}

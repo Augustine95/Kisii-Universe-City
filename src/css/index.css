@@ -404,6 +404,11 @@ p {
 }
 
 /* Plan */
+
+.plan {
+  font-size: 1.5rem;
+}
+
 .plan__heading {
   text-align: center;
   text-transform: capitalize;
@@ -442,6 +447,12 @@ p {
   width: 5rem;
 }
 
+@media screen and (min-width: 768px) {
+  .plan {
+    font-size: 1rem;
+  }
+}
+
 /* Select */
 .select {
   border-radius: 10px;
@@ -472,22 +483,15 @@ p {
   position: relative;
 }
 
-.post-form__btn-container {
-  display: flex;
-}
-
-.post-form__btn-container .btn {
-  margin: 0 0.5rem;
-}
-
 .post-card__footer__emoji-icon {
   display: none;
 }
 
 .post-form__cancel-btn {
+  cursor: pointer;
+  left: 0.3rem;
   position: absolute;
   top: 0.3rem;
-  left: 0.3rem;
 }
 
 .emoji-mart {
@@ -508,9 +512,30 @@ p {
   letter-spacing: 1px;
 }
 
+.post-form--small {
+  min-width: 19.5rem;
+  max-width: 30rem;
+  font-size: 1rem;
+}
+
+.post-form--large {
+  display: none;
+  width: 40rem;
+}
+
 @media screen and (min-width: 430px) {
   .post-card__footer__emoji-icon {
     display: inline-block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .post-form--large {
+    display: block;
+  }
+
+  .post-form--small {
+    display: none;
   }
 }
 

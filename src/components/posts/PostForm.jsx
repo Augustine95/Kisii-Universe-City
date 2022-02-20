@@ -1,12 +1,13 @@
 import React, { useRef, useState } from "react";
-import Cancel from "@mui/icons-material/Cancel";
 import { EmojiEmotions, Photo } from "@mui/icons-material";
 
 import AppButton from "../common/AppButton";
 import AppModal from "../common/AppModal";
-import Avatar from "../avatar";
 import DropDownList from "../common/DropDownList";
 import TextArea from "../common/TextArea";
+import PostFormHeader from "../forms/PostFormHeader";
+import PostFormBody from "./PostFormBody";
+import PostFormFooter from "./PostFormFooter";
 
 const targetGroup = [
   { value: 1, label: "Everyone" },
@@ -37,43 +38,41 @@ export default function PostForm({
       open={postFormOpen}
       onClose={onPostFormClose}
     >
-      <article className="card post-form">
-        <header className="card__header">
-          <h1 className="plan__heading">create post</h1>
-          <Cancel className="post-form__cancel-btn" onClick={onPostFormClose} />
-        </header>
-        <section className="card__body">
-          <article className="media plan__media">
-            <Avatar src={currentUser.avatar} className="avatar--small" />
-            <div>
-              <span className="plan__author">{currentUser.name}</span>
-              <DropDownList data={targetGroup} />
-            </div>
-          </article>
-          <TextArea
-            placeholder="Tell us what's going on?"
-            value={postMessage}
-            onChange={handlePostMessageChange}
-            autoFocus
+      <>
+        <article className="card post-form post-form--small">
+          <PostFormHeader
+            heading="create post"
+            onPostFormClose={onPostFormClose}
           />
-          {postPhoto && <img src={postPhoto} alt="post" />}
-        </section>
-        <footer className="plan__footer">
-          <span className="plan__footer__heading">Add to your post</span>
-          <article className="plan__footer__icons">
-            {/* <Photo onClick={onPhotoIconClick} ref={selectedFileRef} /> */}
-            <input type="file" ref={selectedFileRef} />
-            <EmojiEmotions onClick={onEmojiIconClick} />
-          </article>
-        </footer>
-        <section className="post-form__btn-container">
+          <PostFormBody
+            postPhoto={postPhoto}
+            onPostMessageChange={handlePostMessageChange}
+          />
+          <PostFormFooter onEmojiIconClick={onEmojiIconClick} />
           <AppButton
             title="Post"
             onClick={onPostUpload}
             className="btn btn--long btn--primary btn--outline"
           />
-        </section>
-      </article>
+        </article>
+
+        <article className="card post-form plan post-form--large">
+          <PostFormHeader
+            heading="create post"
+            onPostFormClose={onPostFormClose}
+          />
+          <PostFormBody
+            postPhoto={postPhoto}
+            onPostMessageChange={handlePostMessageChange}
+          />
+          <PostFormFooter onEmojiIconClick={onEmojiIconClick} />
+          <AppButton
+            title="Post"
+            onClick={onPostUpload}
+            className="btn btn--long btn--primary btn--outline"
+          />
+        </article>
+      </>
     </AppModal>
   );
 }
