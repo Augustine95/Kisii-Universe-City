@@ -12,7 +12,6 @@ const style = {
   position: "absolute",
   top: "45%",
   transform: "translate(-50%, -50%)",
-  // width: "40rem",
 };
 
 export default function AppModal({

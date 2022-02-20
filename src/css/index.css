@@ -520,6 +520,12 @@ p {
   }
 }
 
+@media screen and (min-width: 500px) {
+  .post-form {
+    min-width: 30rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .post-form {
     width: 40rem;
@@ -717,6 +723,16 @@ p {
   color: #e43030;
   letter-spacing: 1px;
   margin-left: 0.5rem;
+}
+
+.input-group ::placeholder {
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 768px) {
+  .input-group ::placeholder {
+    font-size: 1rem;
+  }
 }
 
 /* Form */

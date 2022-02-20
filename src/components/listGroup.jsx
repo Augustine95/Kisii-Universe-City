@@ -2,7 +2,6 @@ import React from "react";
 
 import Avatar from "./avatar";
 import TextArea from "./common/TextArea";
-import Input from "./input";
 
 export default function ListGroup({
   avatar,
@@ -28,7 +27,6 @@ export default function ListGroup({
   return (
     <article className={getContainerClass()}>
       <Avatar src={avatar} className="avatar--medium" />
-      {/* <Input {...otherProps} value={value} /> */}
       <TextArea value={value} {...otherProps} />
       <button className={getBtnClassName()} onClick={onClick} disabled={!value}>
         {btnLabel}

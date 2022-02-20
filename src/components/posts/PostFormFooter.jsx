@@ -1,5 +1,4 @@
 import React from "react";
-
 import EmojiEmotions from "@mui/icons-material/EmojiEmotions";
 
 export default function PostFormFooter({ onEmojiIconClick, onPostUpload }) {

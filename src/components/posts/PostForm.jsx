@@ -8,11 +8,11 @@ import PostFormBody from "./PostFormBody";
 import PostFormFooter from "./PostFormFooter";
 
 const childModalStyles = {
-  top: "80%",
-  width: "auto",
   background: 0,
   boxShadow: 0,
   right: "0",
+  top: "80%",
+  width: "auto",
 };
 
 export default function PostForm({
