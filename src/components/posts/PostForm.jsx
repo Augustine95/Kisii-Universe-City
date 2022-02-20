@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Picker } from "emoji-mart";
 
 import AppButton from "../common/AppButton";
 import AppModal from "../common/AppModal";
@@ -6,22 +7,52 @@ import PostFormHeader from "../forms/PostFormHeader";
 import PostFormBody from "./PostFormBody";
 import PostFormFooter from "./PostFormFooter";
 
+const childModalStyles = {
+  top: "80%",
+  width: "auto",
+  background: 0,
+  boxShadow: 0,
+  right: "0",
+};
+
 export default function PostForm({
-  ChildModal,
-  onEmojiIconClick,
-  onPost: onPostUpload,
+  onPostUpload,
   onPostFormClose,
   postFormOpen,
   postPhoto,
 }) {
   const [postMessage, setPostMessage] = useState("");
+  const [emojiOpen, setEmojiOpen] = useState(false);
+
+  const getChildModal = () => (
+    <AppModal
+      onClose={handleEmojiOpen}
+      open={emojiOpen}
+      styles={childModalStyles}
+    >
+      <Picker
+        autoFocus
+        onSelect={(e) => handleAddPostEmoji(e)}
+        theme="auto"
+        sheetSize={32}
+      />
+    </AppModal>
+  );
+
+  function handleAddPostEmoji({ native }) {
+    setPostMessage(postMessage + native);
+  }
+
+  function handleEmojiOpen() {
+    setEmojiOpen(!emojiOpen);
+  }
 
   const handlePostMessageChange = ({ currentTarget: input }) =>
     setPostMessage(input.value);
 
   return (
     <AppModal
-      ChildModal={ChildModal}
+      ChildModal={getChildModal()}
       open={postFormOpen}
       onClose={onPostFormClose}
     >
@@ -35,7 +66,7 @@ export default function PostForm({
           postMessage={postMessage}
           onPostMessageChange={handlePostMessageChange}
         />
-        <PostFormFooter onEmojiIconClick={onEmojiIconClick} />
+        <PostFormFooter onEmojiIconClick={handleEmojiOpen} />
         <AppButton
           title="Post"
           onClick={onPostUpload}
