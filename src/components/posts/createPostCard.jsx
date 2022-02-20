@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Picker } from "emoji-mart";
 
-import avatar from "../../images/augustine.png";
 import PostForm from "./PostForm";
 import AppModal from "../common/AppModal";
 
@@ -18,8 +17,6 @@ export default function CreatePostCard({
   postFormOpen,
 }) {
   const [emojiOpen, setEmojiOpen] = useState(false);
-
-  const currentUser = { name: "Augustine Awuori II", avatar };
 
   const childModalStyles = {
     top: "80%",
@@ -50,13 +47,12 @@ export default function CreatePostCard({
     <section>
       <PostForm
         ChildModal={getChildModal()}
-        currentUser={currentUser}
         onEmojiIconClick={handleEmojiOpen}
         onPhotoIconClick={onAddPostPhoto}
-        onPost={onPostUpload}
-        postPhoto={postPhoto}
         onPostFormClose={onPostFormClose}
+        onPostUpload={onPostUpload}
         postFormOpen={postFormOpen}
+        postPhoto={postPhoto}
       />
     </section>
   );

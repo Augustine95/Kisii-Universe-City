@@ -1,5 +1,5 @@
 import React from "react";
-import { Verified } from "@mui/icons-material";
+import Verified from "@mui/icons-material/Verified";
 
 export default function PostHeader({
   name,

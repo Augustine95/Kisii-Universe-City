@@ -12,7 +12,11 @@ const targetGroup = [
 
 const currentUser = { id: 1, name: "Augustine Awuori", username: "@augustine" };
 
-export default function PostFormBody({ postPhoto, onPostMessageChange }) {
+export default function PostFormBody({
+  onPostMessageChange,
+  postMessage,
+  postPhoto,
+}) {
   return (
     <section className="card__body">
       <article className="media plan__media">

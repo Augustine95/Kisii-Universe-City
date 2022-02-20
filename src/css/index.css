@@ -480,6 +480,8 @@ p {
 /* Post Form */
 .post-form {
   background: #e7e0e0;
+  max-width: 30rem;
+  min-width: 19.5rem;
   position: relative;
 }
 
@@ -512,17 +514,6 @@ p {
   letter-spacing: 1px;
 }
 
-.post-form--small {
-  min-width: 19.5rem;
-  max-width: 30rem;
-  font-size: 1rem;
-}
-
-.post-form--large {
-  display: none;
-  width: 40rem;
-}
-
 @media screen and (min-width: 430px) {
   .post-card__footer__emoji-icon {
     display: inline-block;
@@ -530,12 +521,8 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-  .post-form--large {
-    display: block;
-  }
-
-  .post-form--small {
-    display: none;
+  .post-form {
+    width: 40rem;
   }
 }
 
