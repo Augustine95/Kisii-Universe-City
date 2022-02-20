@@ -32,7 +32,7 @@ function stringAvatar(name) {
   };
 }
 
-export default function AppAvatar({ src, className }) {
+export default function AppAvatar({ src, className, width }) {
   const getClassName = () => {
     let name = "avatar media__image ";
     if (className) name += className;
@@ -46,6 +46,7 @@ export default function AppAvatar({ src, className }) {
       className={getClassName()}
       draggable="false"
       src={src}
+      sx={{ width, height: width }}
     />
   );
 }
