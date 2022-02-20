@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import Cancel from "@mui/icons-material/Cancel";
 import { EmojiEmotions, Photo } from "@mui/icons-material";
 
 import AppButton from "../common/AppButton";
@@ -39,6 +40,7 @@ export default function PostForm({
       <article className="card post-form">
         <header className="card__header">
           <h1 className="plan__heading">create post</h1>
+          <Cancel className="post-form__cancel-btn" onClick={onPostFormClose} />
         </header>
         <section className="card__body">
           <article className="media plan__media">
@@ -69,11 +71,6 @@ export default function PostForm({
             title="Post"
             onClick={onPostUpload}
             className="btn btn--long btn--primary btn--outline"
-          />
-          <AppButton
-            title="Cancel"
-            onClick={onPostFormClose}
-            className="btn btn--long btn--secondary"
           />
         </section>
       </article>

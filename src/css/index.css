@@ -469,6 +469,7 @@ p {
 /* Post Form */
 .post-form {
   background: #e7e0e0;
+  position: relative;
 }
 
 .post-form__btn-container {
@@ -481,6 +482,12 @@ p {
 
 .post-card__footer__emoji-icon {
   display: none;
+}
+
+.post-form__cancel-btn {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
 }
 
 .emoji-mart {
